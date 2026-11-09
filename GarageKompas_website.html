@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GarageKompas – slimme auto-accessoires, verzorging en handige oplossingen voor autoliefhebbers.">
+<title>GarageKompas | Alles voor jouw auto</title>
+<style>
+:root{--bg:#0b0c0e;--panel:#15171a;--panel2:#1d2024;--gold:#c7a45a;--gold2:#e6c77f;--ink:#f5f2eb;--muted:#aaa69c;--line:#34312a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0b0c0eeb;backdrop-filter:blur(12px);border-bottom:1px solid #292720}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;letter-spacing:.09em;font-size:1.15rem}.brand span{color:var(--gold)}
+nav{display:flex;gap:26px;color:#d4d0c7;font-size:.94rem}nav a:hover,.textlink:hover{color:var(--gold2)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:8px 12px}
+.hero{min-height:570px;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #25231e;background:radial-gradient(ellipse at 78% 38%,#4b3b20 0,#211c13 22%,#0b0c0e 58%)}
+.hero:after{content:"";position:absolute;right:-7%;top:13%;width:56%;height:70%;border:1px solid #b8954c33;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 0 34px #b8954c0b,0 0 0 70px #b8954c08}
+.hero-inner{position:relative;z-index:1;padding:76px 0;max-width:670px}
+.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:800}
+h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:1.02;letter-spacing:-.045em;margin:18px 0}
+h1 em{font-style:normal;color:var(--gold2)}.lead{font-size:1.12rem;color:#c3beb3;max-width:560px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:6px;font-weight:800;border:1px solid var(--gold);transition:.2s}
+.btn.primary{background:var(--gold);color:#111}.btn.primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn.ghost{color:var(--gold2)}.btn.ghost:hover{background:#c7a45a16}
+section{padding:78px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+h2{font-size:clamp(1.8rem,3.5vw,2.7rem);line-height:1.1;margin:9px 0}
+.sub{color:var(--muted);max-width:600px;margin:0}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.category{background:linear-gradient(145deg,#1c1d1e,#111214);border:1px solid var(--line);padding:27px;border-radius:12px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.category .symbol{font-size:2rem;color:var(--gold)}.category h3{font-size:1.25rem;margin:10px 0 4px}.category p{color:var(--muted);margin:0 0 16px}.textlink{color:var(--gold2);font-weight:750}
+.products{background:#101113;border-top:1px solid #242321;border-bottom:1px solid #242321}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 26px}
+.filter{border:1px solid #484236;background:transparent;color:#ddd5c5;padding:8px 14px;border-radius:99px;cursor:pointer}
+.filter.active,.filter:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:var(--panel);border:1px solid #302d27;border-radius:12px;overflow:hidden}
+.product-art{height:185px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#594522 0,#282117 30%,#171819 72%);font-size:4.3rem;color:var(--gold2)}
+.product-body{padding:20px}.tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;color:var(--gold2);font-weight:800}
+.product h3{margin:7px 0;font-size:1.1rem}.product p{margin:0 0 15px;color:var(--muted);font-size:.94rem}
+.note{border-left:3px solid var(--gold);padding:13px 16px;background:#c7a45a0d;color:#c9c2b4;border-radius:0 7px 7px 0;margin-top:24px;font-size:.9rem}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.why-panel{padding:30px;background:linear-gradient(145deg,#211d15,#141517);border:1px solid #4b402b;border-radius:14px}
+.points{display:grid;gap:16px;margin-top:22px}.point{display:flex;gap:13px}.check{color:var(--gold2);font-weight:900}
+.faq{max-width:820px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{cursor:pointer;font-weight:750}.faq p{color:var(--muted);margin-bottom:0}
+.cta{background:linear-gradient(110deg,#2b2417,#141414);border:1px solid #5c4a2b;border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+footer{padding:35px 0;border-top:1px solid #292720;color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:.78rem;color:#8f8b82}
+@media(max-width:760px){nav{display:none;position:absolute;top:76px;left:0;right:0;padding:18px 4%;background:#101113;flex-direction:column;gap:15px;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.hero{min-height:520px}.hero:after{width:90%;right:-40%;opacity:.5}.categories,.product-grid{grid-template-columns:1fr}.section-head,.why,.cta{display:block}.cta .btn{margin-top:20px}.why-panel{margin-top:20px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top">GARAGE<span>KOMPAS</span></a>
+  <nav id="nav"><a href="#assortiment">Assortiment</a><a href="#producten">Productideeën</a><a href="#over">Over GarageKompas</a><a href="#vragen">Veelgestelde vragen</a></nav>
+  <button class="menu" id="menu" aria-label="Menu openen">Menu ☰</button>
+ </div>
+</header>
+<main id="top">
+ <div class="hero">
+  <div class="wrap hero-inner">
+   <div class="eyebrow">Voor liefhebbers. Voor elke garage.</div>
+   <h1>Geef jouw auto<br><em>de aandacht</em> die hij verdient.</h1>
+   <p class="lead">Ontdek slimme accessoires, handige opbergoplossingen en producten voor het schoonmaken en verzorgen van je auto.</p>
+   <div class="actions"><a class="btn primary" href="#assortiment">Ontdek het assortiment</a><a class="btn ghost" href="#over">Waarom GarageKompas?</a></div>
+  </div>
+ </div>
+ <section id="assortiment">
+  <div class="wrap">
+   <div class="section-head"><div><div class="eyebrow">Vind jouw richting</div><h2>Waar ben je naar op zoek?</h2><p class="sub">Praktische ideeën voor onderweg, in de auto en in je eigen garage.</p></div></div>
+   <div class="categories">
+    <article class="category"><div><div class="symbol">✦</div><h3>Auto schoonmaken</h3><p>Accessoires voor een nette auto en een verzorgde uitstraling.</p></div><a class="textlink" href="#producten" data-filter-link="clean">Bekijk ideeën →</a></article>
+    <article class="category"><div><div class="symbol">▤</div><h3>Opbergen & organiseren</h3><p>Houd spullen, gereedschap en bagage overzichtelijk bij elkaar.</p></div><a class="textlink" href="#producten" data-filter-link="storage">Bekijk ideeën →</a></article>
+    <article class="category"><div><div class="symbol">⚙</div><h3>Gadgets & accessoires</h3><p>Handige aanvullingen voor dagelijks gebruik en autoplezier.</p></div><a class="textlink" href="#producten" data-filter-link="gadgets">Bekijk ideeën →</a></article>
+   </div>
+  </div>
+ </section>
+ <section class="products" id="producten">
+  <div class="wrap">
+   <div class="eyebrow">De eerste selectie</div><h2>Productideeën voor jouw auto</h2>
+   <p class="sub">Dit is de eerste etalage van GarageKompas. We testen eerst welke producten interessant zijn voordat we ze daadwerkelijk aanbieden.</p>
+   <div class="filters" role="group" aria-label="Filter productcategorie">
+    <button class="filter active" data-filter="all">Alles</button><button class="filter" data-filter="clean">Schoonmaken</button><button class="filter" data-filter="storage">Opbergen</button><button class="filter" data-filter="gadgets">Gadgets</button>
+   </div>
+   <div class="product-grid" id="productGrid">
+    <article class="product" data-category="clean"><div class="product-art">🧽</div><div class="product-body"><div class="tag">Schoonmaken</div><h3>Microvezel onderhoudsset</h3><p>Een basisset voor het reinigen en drogen van interieur en exterieur.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+    <article class="product" data-category="clean"><div class="product-art">✧</div><div class="product-body"><div class="tag">Schoonmaken</div><h3>Detailing borstels</h3><p>Handige borstels voor ventilatieroosters, naden en kleine hoekjes.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+    <article class="product" data-category="storage"><div class="product-art">▣</div><div class="product-body"><div class="tag">Opbergen</div><h3>Kofferbak organizer</h3><p>Een opvouwbare oplossing om spullen in de kofferbak op hun plek te houden.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+    <article class="product" data-category="storage"><div class="product-art">▤</div><div class="product-body"><div class="tag">Opbergen</div><h3>Stoel-opbergvak</h3><p>Extra vakken voor kleine spullen die je onderweg bij de hand wilt houden.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+    <article class="product" data-category="gadgets"><div class="product-art">⌁</div><div class="product-body"><div class="tag">Gadgets</div><h3>Telefoonhouder</h3><p>Een praktische houder voor navigatie. Kies later alleen modellen die veilig en degelijk bevestigd kunnen worden.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+    <article class="product" data-category="gadgets"><div class="product-art">◉</div><div class="product-body"><div class="tag">Gadgets</div><h3>Auto-organizer accessoires</h3><p>Kleine handige aanvullingen om dagelijkse spullen overzichtelijk te bewaren.</p><span class="small">Productidee – nog niet te koop</span></div></article>
+   </div>
+   <div class="note">Transparant: deze artikelen zijn voorbeelden om de winkel op te bouwen. Er zijn nog geen leveranciers, voorraad, prijzen of bestelknoppen bevestigd. Er kan via deze voorbeeldpagina nog niets worden gekocht.</div>
+  </div>
+ </section>
+ <section id="over">
+  <div class="wrap why">
+   <div><div class="eyebrow">Over GarageKompas</div><h2>Een slimme keuze begint met goed vergelijken.</h2><p class="sub">GarageKompas wordt een Nederlandstalige plek voor automobilisten en doe-het-zelvers die hun auto graag netjes, praktisch en goed georganiseerd houden.</p></div>
+   <div class="why-panel"><h3>Onze uitgangspunten</h3><div class="points"><div class="point"><span class="check">✓</span><div><strong>Praktisch</strong><br><span class="small">Producten die een duidelijk nut hebben.</span></div></div><div class="point"><span class="check">✓</span><div><strong>Duidelijk</strong><br><span class="small">Eerlijke informatie over product, levering en retour.</span></div></div><div class="point"><span class="check">✓</span><div><strong>Stap voor stap</strong><br><span class="small">Eerst kwaliteit en interesse testen, dan pas uitbreiden.</span></div></div></div></div>
+  </div>
+ </section>
+ <section id="vragen" class="products">
+  <div class="wrap faq"><div class="eyebrow">Goed om te weten</div><h2>Veelgestelde vragen</h2>
+   <details><summary>Kan ik hier al producten bestellen?</summary><p>Nog niet. Dit is de eerste werkende etalage. Producten worden pas aangeboden zodra leverancier, prijs, levertijd, kwaliteit en retourafhandeling zijn gecontroleerd.</p></details>
+   <details><summary>Hoe werkt dropshipping?</summary><p>Bij dropshipping verstuurt een leverancier het product rechtstreeks naar de klant. GarageKompas blijft als verkoper verantwoordelijk voor correcte informatie, levering, klantenservice en retouren.</p></details>
+   <details><summary>Waarom staan er nog geen prijzen?</summary><p>We willen geen prijzen of levertijden verzinnen. Die vullen we pas in na controle van echte leveranciers en alle bijkomende kosten.</p></details>
+  </div>
+ </section>
+ <section><div class="wrap"><div class="cta"><div><div class="eyebrow">GarageKompas is in opbouw</div><h2>Samen bouwen we aan een betere auto-ervaring.</h2><p class="sub">De eerste stap is gezet. Het assortiment volgt zodra de producten zorgvuldig zijn geselecteerd.</p></div><a class="btn primary" href="#producten">Bekijk productideeën</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><a class="brand" href="#top">GARAGE<span>KOMPAS</span></a><div class="small">Een sterk begin. Stap voor stap opgebouwd.</div></div><div>© <span id="year"></span> GarageKompas</div><div class="small">Conceptwebsite – nog niet geopend voor verkoop.</div></div></footer>
+<script>
+const buttons=[...document.querySelectorAll('.filter')], cards=[...document.querySelectorAll('.product')];
+function setFilter(f){buttons.forEach(b=>b.classList.toggle('active',b.dataset.filter===f));cards.forEach(c=>c.hidden=f!=='all'&&c.dataset.category!==f)}
+buttons.forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.filter)));
+document.querySelectorAll('[data-filter-link]').forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.filterLink)));
+document.getElementById('menu').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
